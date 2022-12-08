@@ -1,0 +1,90 @@
+
+  
+ 
+  /* section {
+    height: 300px;
+    padding-top: 100px;
+    float: left;
+    width: 50%;
+    position: relative;
+  } */
+  
+  /*==============++++================*/
+  .menu {
+    height: 50px;
+    width: 50px;
+    position: relative;
+    /* margin: auto; */
+    float: right;
+    padding-top: 0px;
+    border: 5px solid transparent;
+    border-radius: 100%;
+    transition: 0.3s;
+    cursor: pointer;
+    margin-top: -4px;
+}
+  
+ 
+  
+  .bar {
+    height: 5px;
+    width: 28px;
+    display: block;
+    margin: 4px auto;
+    position: relative;
+    background-color: black;
+    border-radius: 10px;
+    transition: 0.4s;
+  }
+  
+  
+
+  .icon .menu {
+    overflow: hidden;
+  }
+  .icon .menu:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    border: 5px solid transparent;
+    border-radius: 100%;
+  }
+  .icon .menu:hover:after {
+    animation: circle-creation 1s forwards;
+  }
+  .icon .menu:hover .bar:nth-of-type(1) {
+    transform: translateY(15px) rotate(45deg);
+  }
+  .icon .menu:hover .bar:nth-of-type(2) {
+    transform: translateX(100px);
+    transition: 0.6s;
+  }
+  .icon .menu:hover .bar:nth-of-type(3) {
+    transform: translateY(-3.5px) rotate(-45deg);
+  }
+  
+  /*============= Demo  Animation  ================*/
+ 
+  @keyframes circle-creation {
+    0% {
+      border-color: transparent;
+      transform: rotate(0deg);
+    }
+    25% {
+      border-color: transparent black transparent transparent;
+      transform: rotate(-35deg);
+    }
+    50% {
+      border-color: transparent black  black transparent;
+    }
+    75% {
+      border-color: transparent black black black;
+    }
+    100% {
+      border-color: black;
+      transform: rotate(-300deg);
+    }
+  }

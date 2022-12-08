@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test loader</title>
+    <link href="css/google-font.css" rel="stylesheet" />
+    <link href="css/fontawesome-all.css" rel="stylesheet" />
+    <link href="css/swiper.css" rel="stylesheet" />
+    <link href="css/magnific-popup.css" rel="stylesheet" />
+    <!-- <link href="css/styles.css" rel="stylesheet" /> -->
+    <link rel="stylesheet" href="icomoon/style.css">
+    <link rel="stylesheet" href="css/menu-button.css">
+    <script src="js/tailwind.js"></script>
+
+
+    <style>
+        /* #nav {
+            box-shadow: 0px 7px 29px -1px black
+        } */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* .goe {
+  @apply flex-grow-0 flex-shrink-0;
+  flex-basis: 33.333333%;
+  max-width: 33.333333%;
+} */
+    </style>
+</head>
+
+<body class="m-0 p-0" data-spy="scroll" data-target=".fixed-top">
+    <!-- preload -->
+    <div id="preload" class="fixed w-full h-full z-50 bg-white">
+        <div id="loader"
+            class="w-[50px] h-[50px] rounded-full mt-[10px] absolute top-[50%] left-[50%] animate-loader border-l-transparent border-4 border-red-600">
+        </div>
+    </div>
+    <!-- preload end -->
+    <!-- nav bar -->
+    <div class="bg-white sm:h-28 h-[50px] w-full fixed navbar z-30 sm:pt-[45px]" id="nav-bar">
+        <div class="container mx-auto">
+            <!-- Logo -->
+            <a href="./test.html" class="inline-block float-left"><img src="./img/logo.png" alt="logo" width="70px"></a>
+
+            <!-- <div class="navbar-collapse  sm:basis-auto basis-[100%] offcanvas-collapse sm:flex sm:flex-grow sm:items-center fixed top-[0] bottom-[0] left-full w-full pr-4 pl-4 overflow-y-auto invisible bg-white transition-[visibility] sm:static sm:inset-auto sm:px-0 sm:bg-transparent sm:overflow-y-auto sm:invisible"
+                id="navbarsExampleDefault">
+                <ul class="pl-0 mt-3 mb-2 ml-auto flex flex-col list-none sm:mt-0 sm:mb-0 sm:flex-row">
+                    <li>
+                        <a class="nav-link page-scroll active" href="#header">Home <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li>
+                        <a class="nav-link page-scroll" href="#features">Features</a>
+                    </li>
+                    <li>
+                        <a class="nav-link page-scroll" href="#details">Details</a>
+                    </li>
+                    <li>
+                        <a class="nav-link page-scroll" href="#pricing">Pricing</a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Drop</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            <a class="dropdown-item page-scroll" href="article.html">Article Details</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item page-scroll" href="terms.html">Terms Conditions</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item page-scroll" href="privacy.html">Privacy Policy</a>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="nav-link page-scroll" href="#download">Download</a>
+                    </li>
+                </ul> -->
+            <!-- <span class="block sm:ml-3.5">
+                    <a class="no-underline" href="#your-link">
+                        <i
+                            class="fab fa-apple text-indigo-600 hover:text-pink-500 text-xl transition-all duration-200 mr-1.5"></i>
+                    </a>
+                    <a class="no-underline" href="#your-link">
+                        <i
+                            class="fab fa-android text-indigo-600 hover:text-pink-500 text-xl transition-all duration-200"></i>
+                    </a>
+                </span> 
+            </div> -->
+            <!-- end of navbar-collapse -->
+            <div id="options" class="w-[50%] h-12 float-right sm:h-28">
+                <!-- menu button -->
+                <!-- <div class="float-right mt-3 cursor-pointer h-[50px] w-[50px] border-[2.5px] rounded-[100%] delay-[0.3s] border-transparent pt-[10px] overflow-hidden after:w-[45%] after:h-[90%] after:left-0 after:top-0 after:absolute after:border-[2.5px] after:rounded-[100%] after:border-transparent after:hover:translate-x-2">
+                    <div class="bg-slate-700 h-[2.5px] w-[35px] block my-[5px] mx-auto relative rounded-[5px] delay-[.4s]"></div>
+                    <div class="bg-slate-700 h-[2.5px] w-[35px] block my-[5px] mx-auto relative rounded-[5px] delay-[.4s]"></div>
+                    <div class="bg-slate-700 h-[2.5px] w-[35px] block my-[5px] mx-auto relative rounded-[5px] delay-[.4s]"></div>
+                </div> -->
+                <!-- menu button -->
+                <div class="icon sm:hidden" id="menu-button">
+                    <div class="menu">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"> </div>
+                    </div>
+                </div>
+                <!-- nav -->
+                <!-- max-h-0 transition-[max-height] -->
+                <div id="nav" class="overflow-hidden w-full h-full fixed max-h-0 transition-[max-height] bg-black sm:max-h-[none] sm:top-0 sm:relative sm:w-fit sm:bg-transparent float-right">
+                    <ul class="list-none flex gap-[50px] font-[500] text-[30px]">
+                        <li><a href="#" class="no-underline block p-30px text-purple-200 hover:bg-orange-50">About</a></li>
+                        <li><a href="#" class="no-underline block p-30px text-purple-200 hover:bg-orange-50">Shopping</a></li>
+                        <li><a href="#" class="no-underline block p-30px text-purple-200 hover:bg-orange-50">Cart</a></li>
+                    </ul>
+                </div>
+                <!-- menu button end -->
+                <!-- <ul class="flex gap-4 float-right">
+                    <li class="cursor-pointer text-orange-400">
+                        HOME
+                    </li>
+                    <li class="cursor-pointer hover:text-orange-400 transition-all">
+                        SHOP
+                    </li>
+                    <li class="cursor-pointer hover:text-orange-400 transition-all">
+                        ABOUT US
+                    </li>
+                    <li class="cursor-pointer hover:text-orange-400 transition-all">
+                        CONTACT
+                    </li>
+                </ul> -->
+            </div>
+        </div>
+    </div>
+    <!-- nav bar end -->
+    <div class="container mx-auto">
+        <div class="sm:pt-28 pt-12" id="content">
+
+        </div>
+        <a href="#body">hi</a>
+    </div>
+
+    <!-- <a href="#"><button class="rounded-full bg-slate-600 h-10 w-10 fixed z-[10] right-[12px] bottom-[12px] bg-[url('./img/up-arrow.png')] bg-no-repeat bg-center bg-[length:20px] hover:bg-black"></button></a> -->
+    <footer id="footer"
+        class="bg-black bg-cover bg-center bg-no-repeat relative h-[100%] w-full before:inset-0 before:absolute before:w-full before:h-full bg-[url('./img/footer.jpeg')] ">
+        <div class="container mx-auto">
+            <div class="flex flex-wrap">
+                <div class="">
+                    <a href="#">
+                        <h1
+                            class="text-white transition-all mb-4 text-[1.5rem] hover:text-amber-500 cursor-pointer block">
+                            Company
+                            Name</h1>
+                    </a>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi quasi perferendis ratione
+                        perspiciatis accusantium.</p>
+                </div>
+                <div class="flex flex-col">
+                    <h3 class="text-[16px] font-bold text-white pb-[30px]">Discover</h3>
+                    <ul class="list-none">
+                        <li><a href="#" class="">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="flex-wrap">
+                    <h3 class="text-[16px] font-bold text-white pb-[30px]">About</h3>
+                    <ul class="list-none">
+                        <li><a href="#">Clients</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Career</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">Journal</a></li>
+                    </ul>
+                </div>
+                <div class="">
+                    <h3 class="text-[16px] font-bold text-white pb-[30px]">Help</h3>
+                    <ul class="list-none">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms &amp; Conditions</a></li>
+                        <li><a href="#">Partners</a></li>
+                    </ul>
+                </div>
+                <div class="">
+                    <h3 class="text-[16px] font-bold text-white pb-[30px]">Follow Us</h3>
+                    <ul class="list-none">
+                        <li><a href="#" class=""><span class="icon-instagram"></span></a></li>
+                        <li><a href="#"><span class="icon-twitter"></span></a></li>
+                        <li><a href="#"><span class="icon-facebook"></span></a></li>
+                        <li><a href="#"><span class="icon-pinterest"></span></a></li>
+                        <li><a href="#"><span class="icon-youtube-play"></span></a></li>
+
+                </div>
+
+            </div>
+            <div class="">
+                <div class="text-center mt-[50px]">
+                    <hr class="mb-[50px] border-gray-600 border-[.5px]">
+                    <p class="pb-[100px]"><small>&copy; 2022&mdash;2023 All Rights Reserved.</small></p>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <h1 id="c">Lorem ipsum dolor sit amet consectetur adipisicing elit. Id dignissimos in provident delectus expedita
+        tempora, tempore explicabo? Totam doloremque laudantium nostrum ad, magnam atque! Quae corrupti sequi esse earum
+        perspiciatis.</h1>
+
+
+
+
+
+    <!-- <div id="footer-social-media">
+    
+        </div>
+        <div id="footer-copyright">
+            <div class="container mx-auto">
+                <p class="text-zinc-50 pt-[50px]">
+                    All Rights Reserved. Copyright © 2040 </p>
+            </div>
+        </div> -->
+    <script>
+        document.querySelector(".navbar-toggler-icon").addEventListener("mouseover", mouseOver);
+        document.querySelector(".navbar-toggler-icon").addEventListener("mouseout", mouseOut);
+
+        function mouseOver() {
+            document.querySelector(".navbar-toggler-icon").style.width = "10px";
+        }
+
+        function mouseOut() {
+            document.querySelector(".navbar-toggler-icon").style.width = "20px";
+        }
+    </script>
+
+
+
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/test.js"></script>
+    <script src="js/tailwind.config.js"></script>
+
+
+
+</body>
+
+</html>
